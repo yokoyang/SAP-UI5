@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+    <script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+            id="sap-ui-bootstrap"
+            data-sap-ui-libs="sap.ui.commons, sap.ui.ux3"
+            data-sap-ui-xx-bindingSyntax="complex"
+            data-sap-ui-theme="sap_bluecrystal">
+
+    </script>
+
+    <!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+    <script>
+        sap.ui.localResources("test");
+        var view1 = sap.ui.view({id: "idview1", viewName: "test.view1", type: sap.ui.core.mvc.ViewType.JS});
+        var view2 = sap.ui.view({id: "idview2", viewName: "test.view2", type: sap.ui.core.mvc.ViewType.JS});
+        var oShell = new sap.ui.ux3.Shell("shellId", {
+            appTitle: "InkYourCode.com",
+            appIcon: "logo.png",
+            showLogoutButton: false,
+            showSearchTool: false,
+            content: [view1]                                                         //view1 is loading first
+        });
+
+        oShell.placeAt("content");
+    </script>
+    <!--<script>-->
+    <!--sap.ui.localResources("icontabbar");-->
+    <!--var app = new sap.m.App({initialPage: "idview12"});-->
+    <!--var page = sap.ui.view({id: "idview12", viewName: "icontabbar.view2", type: sap.ui.core.mvc.ViewType.JS});-->
+    <!--app.addPage(page);-->
+    <!--app.placeAt("content");-->
+    <!--</script>-->
+
+</head>
+<body class="sapUiBody" role="application">
+<div id="content"></div>
+</body>
+</html>
